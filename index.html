@@ -11,12 +11,34 @@
     <main>
       <div class="container">
         <section class="header">
+          <div class="input-max">
           <input type="number" class="set-number" />
           <button class="btn btn--set">Set</button>
+        </div>
           <h1 class="game-name">Pig Game</h1>
           <button class="btn btn--rules">Rules</button>
         </section>
-        <section class="game-window"></section>
+        <section class="game-window">
+          <!-- <button class="btn btn--new">New Game</button> -->
+          <div class="player player--0 player-active">
+            <h2>Player 1</h2>
+            <p>5</p>
+            <div class="current-box">
+              <p>Current</p>
+              <p>0</p>
+            </div>
+          </div>
+          <div class="player player--1 player-active">
+            <h2>Player 2</h2>
+            <p>5</p>
+            <div class="current-box">
+              <p>Current</p>
+              <p>0</p>
+            <!-- </div>
+            <button class="btn btn--roll">Roll Dice</button>
+            <button class="btn btn--hold">Hold</button>
+          </div> -->
+        </section>
       </div>
     </main>
     <script src="app.js"></script>
