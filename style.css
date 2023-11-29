@@ -6,6 +6,7 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
 
 .container {
   max-width: 110rem;
-  margin: 12rem auto;
+  margin: 8rem auto;
 }
 
 .header {
@@ -45,15 +46,54 @@ body {
   grid-template-columns: 1fr 1fr;
   justify-items: center;
   background-color: #fff;
-  /* position: absolute; */
+  padding: 4rem 0;
+  position: relative;
+
+  border-radius: 1rem;
 }
 
-/* .btn--new {
-  position: relative;
-} */
+.btn--new,
+.btn--roll,
+.btn--hold {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.btn--new {
+  top: 4rem;
+}
+
+.btn--roll {
+  bottom: 12rem;
+}
+.btn--hold {
+  bottom: 6rem;
+}
 
 .player {
   display: flex;
   flex-direction: column;
-  gap: 16rem;
+  align-items: center;
+  /* gap: 16rem; */
+}
+
+.player-name {
+  font-size: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.scores {
+  font-size: 6rem;
+  margin-bottom: 18rem;
+}
+
+.current-box {
+  font-size: 2rem;
+  text-align: center;
+  background-color: black;
+  color: #fff;
+  padding: 1.2rem;
+  margin-bottom: 4rem;
 }
