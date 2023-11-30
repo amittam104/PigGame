@@ -7,6 +7,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  color: #333;
 }
 
 body {
@@ -41,6 +42,15 @@ body {
   gap: 1rem;
 }
 
+.btn--set,
+.btn--rules {
+  font-size: 1.8rem;
+  background-color: #fff;
+  box-shadow: 0 2px 1px #b3b3b3;
+  padding: 1.2rem 2.4rem;
+  border: none;
+}
+
 .game-window {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -52,23 +62,40 @@ body {
   border-radius: 1rem;
 }
 
+.btn {
+  border: none;
+  border-radius: 0.6rem;
+}
+
 .btn--new,
 .btn--roll,
 .btn--hold {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
+  color: #fff;
+  box-shadow: 1px 2px 6px rgba(69, 33, 55, 0.608);
+  font-weight: 400;
 }
 
 .btn--new {
   top: 4rem;
+  font-size: 2.2rem;
+  padding: 1rem 1.8rem;
+  background-color: #8a426e;
 }
 
 .btn--roll {
   bottom: 12rem;
+  font-size: 1.6rem;
+  padding: 1rem 1.8rem;
+  background-color: #634075;
 }
 .btn--hold {
   bottom: 6rem;
+  font-size: 1.6rem;
+  padding: 1rem 1.8rem;
+  background-color: #634075;
 }
 
 .player {
@@ -87,12 +114,13 @@ body {
 .scores {
   font-size: 6rem;
   margin-bottom: 18rem;
+  color: #8a426e;
 }
 
 .current-box {
   font-size: 2rem;
   text-align: center;
-  background-color: black;
+  background-color: #444;
   color: #fff;
   padding: 1.2rem;
   margin-bottom: 4rem;
