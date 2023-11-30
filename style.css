@@ -149,6 +149,8 @@ body {
 .player.player-active {
   background-color: #e6e6e6;
   opacity: 1;
+  /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); */
+  transition: all 0.3s;
 }
 
 .player.player-active .player-name {
@@ -158,6 +160,16 @@ body {
 
 .player.player-active .scores {
   font-weight: 500;
+}
+
+.dice {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  width: 8rem;
 }
 
 .scores {
