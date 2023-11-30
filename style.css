@@ -8,6 +8,7 @@ html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   color: #333;
+  line-height: 1;
 }
 
 body {
@@ -25,7 +26,7 @@ body {
 }
 
 .container {
-  max-width: 110rem;
+  max-width: 100rem;
   margin: 8rem auto;
 }
 
@@ -35,36 +36,69 @@ body {
   align-items: center;
   gap: 10rem;
   margin-bottom: 2rem;
+  position: relative;
+}
+
+.game-name {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 3.6rem;
+  color: #fff;
+  font-weight: 600;
 }
 
 .input-max {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.set-number {
+  font-size: 2.4rem;
+  border-radius: 0.8rem;
+  height: 3.8rem;
+  width: 8rem;
 }
 
 .btn--set,
 .btn--rules {
-  font-size: 1.8rem;
   background-color: #fff;
   box-shadow: 0 2px 1px #b3b3b3;
-  padding: 1.2rem 2.4rem;
   border: none;
+}
+
+.btn--set {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #9c4b7b;
+  padding: 0.9rem 1.8rem;
+}
+
+.btn--rules {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #555;
+  padding: 0.8rem 1.6rem;
 }
 
 .game-window {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  justify-items: center;
+  justify-items: stretch;
   background-color: #fff;
-  padding: 4rem 0;
+  opacity: 0.9;
   position: relative;
 
   border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.4);
 }
 
 .btn {
   border: none;
   border-radius: 0.6rem;
+  cursor: pointer;
 }
 
 .btn--new,
@@ -86,13 +120,13 @@ body {
 }
 
 .btn--roll {
-  bottom: 12rem;
+  bottom: 15rem;
   font-size: 1.6rem;
   padding: 1rem 1.8rem;
   background-color: #634075;
 }
 .btn--hold {
-  bottom: 6rem;
+  bottom: 8rem;
   font-size: 1.6rem;
   padding: 1rem 1.8rem;
   background-color: #634075;
@@ -107,21 +141,50 @@ body {
 
 .player-name {
   font-size: 4rem;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  font-weight: 400;
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.player.player-active {
+  background-color: #e6e6e6;
+  opacity: 1;
+}
+
+.player.player-active .player-name {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.player.player-active .scores {
+  font-weight: 500;
 }
 
 .scores {
   font-size: 6rem;
-  margin-bottom: 18rem;
+  margin-bottom: 22rem;
   color: #8a426e;
 }
 
 .current-box {
   font-size: 2rem;
+  width: 9rem;
+  height: 6rem;
   text-align: center;
   background-color: #444;
   color: #fff;
   padding: 1.2rem;
   margin-bottom: 4rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.current-text {
+  font-size: 1.4rem;
+}
+
+.current {
+  font-size: 3.2rem;
 }
