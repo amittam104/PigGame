@@ -105,6 +105,7 @@ body {
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
 }
 
 .btn {
@@ -168,10 +169,12 @@ body {
 .player.player-active .player-name {
   font-size: 4rem;
   font-weight: 600;
+  transition: all 0.3s;
 }
 
 .player.player-active .scores {
   font-weight: 500;
+  transition: all 0.3s;
 }
 
 .dice {
@@ -188,6 +191,7 @@ body {
   font-size: 6rem;
   margin-bottom: 22rem;
   color: #8a426e;
+  transition: all 0.3s;
 }
 
 .current-box {
