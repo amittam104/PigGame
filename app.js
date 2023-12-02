@@ -26,6 +26,8 @@ const diceEl = document.querySelector(".dice");
 const scores0El = document.querySelector(".scores--0");
 const scores1El = document.querySelector(".scores--1");
 const btnRollEl = document.querySelector(".btn--roll");
+const btnHoldEl = document.querySelector(".btn--hold");
+const btnNewEl = document.querySelector(".btn--new");
 // const activePlayer = document.querySelector(".player--active");
 let currentScore = 0;
 
@@ -36,7 +38,7 @@ scores1El.textContent = 0;
 diceEl.classList.add("hidden");
 let activePlayer = 0;
 
-// EVENT LISTNER - ROLL DICE
+// -------------- EVENT LISTNER - ROLL DICE ----------------
 btnRollEl.addEventListener("click", function () {
   // Generate a random number. Display the dice  per the number
   let diceRoll = Math.trunc(Math.random() * 6) + 1;
@@ -65,4 +67,14 @@ btnRollEl.addEventListener("click", function () {
     player0El.classList.toggle("player-active");
     player1El.classList.toggle("player-active");
   }
+});
+
+// -------------- EVENT LISTNER - HOLD SCORE ----------------
+btnHoldEl.addEventListener("click", function () {
+  // Store the current score of Active Player in Scores
+  score[activePlayer] = currentScore;
+  document.querySelector(`.scores--${activePlayer}`).textContent =
+    score[activePlayer];
+  // If the score is >= 100 then the active player wins
+  // Else the Plaerys will switch
 });
