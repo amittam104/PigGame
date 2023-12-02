@@ -36,7 +36,7 @@ scores1El.textContent = 0;
 diceEl.classList.add("hidden");
 let activePlayer = 0;
 
-// Event Listner - Roll Dice
+// EVENT LISTNER - ROLL DICE
 btnRollEl.addEventListener("click", function () {
   // Generate a random number. Display the dice  per the number
   let diceRoll = Math.trunc(Math.random() * 6) + 1;
@@ -58,12 +58,8 @@ btnRollEl.addEventListener("click", function () {
     document.querySelector(`.current--${activePlayer}`).textContent = 0;
 
     // The active player will change
-    if (activePlayer === 0) {
-      activePlayer = 1;
-    } else {
-      activePlayer = 0;
-    }
-    currentScore += diceRoll;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+
     document.querySelector(`.current--${activePlayer}`).textContent =
       currentScore;
     player0El.classList.toggle("player-active");
