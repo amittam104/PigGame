@@ -35,7 +35,7 @@ const btnNewEl = document.querySelector(".btn--new");
 let currentScore = 0;
 
 // Initial Conditions
-const score = [0, 0];
+let score = [0, 0];
 scores0El.textContent = 0;
 scores1El.textContent = 0;
 diceEl.classList.add("hidden");
@@ -80,7 +80,7 @@ btnHoldEl.addEventListener("click", function () {
     score[activePlayer];
 
   // If the score is >= 100 then the active player wins
-  if (score[activePlayer] >= 100) {
+  if (score[activePlayer] >= 30) {
     document.querySelector(".player-active").classList.add("player-winner");
   } else {
     // Else the Plaerys will switch
@@ -98,3 +98,13 @@ btnHoldEl.addEventListener("click", function () {
 });
 
 // -------------- EVENT LISTNER - NEW GAME ----------------
+btnNewEl.addEventListener("click", function () {
+  currentScore = 0;
+  score = [0, 0];
+  scores0El.textContent = 0;
+  scores1El.textContent = 0;
+  diceEl.classList.add("hidden");
+  activePlayer = 0;
+  player0El.classList.add("player-active");
+  player1El.classList.remove("player-active");
+});
