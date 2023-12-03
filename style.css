@@ -219,4 +219,5 @@ body {
 
 .player-winner {
   background-image: url("img/winner.png");
+  background-size: contain;
 }
