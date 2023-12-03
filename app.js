@@ -5,6 +5,9 @@
 // Event Listner - Roll Dice Button
 // Event Listner - Hold Button
 // Event Listner - New Game (Reset to initial conditions)
+// REfactoring CODE -
+// 1. Create a Player change function
+// 2. Set initial and new game conditions in a function
 
 // FEATURE 1
 // Use user set max value to play the game
@@ -72,9 +75,26 @@ btnRollEl.addEventListener("click", function () {
 // -------------- EVENT LISTNER - HOLD SCORE ----------------
 btnHoldEl.addEventListener("click", function () {
   // Store the current score of Active Player in Scores
-  score[activePlayer] = currentScore;
+  score[activePlayer] += currentScore;
   document.querySelector(`.scores--${activePlayer}`).textContent =
     score[activePlayer];
+
   // If the score is >= 100 then the active player wins
-  // Else the Plaerys will switch
+  if (score[activePlayer] >= 100) {
+    document.querySelector(".player-active").classList.add("player-winner");
+  } else {
+    // Else the Plaerys will switch
+    currentScore = 0;
+    document.querySelector(`.current--${activePlayer}`).textContent = 0;
+
+    // The active player will change
+    activePlayer = activePlayer === 0 ? 1 : 0;
+
+    document.querySelector(`.current--${activePlayer}`).textContent =
+      currentScore;
+    player0El.classList.toggle("player-active");
+    player1El.classList.toggle("player-active");
+  }
 });
+
+// -------------- EVENT LISTNER - NEW GAME ----------------

@@ -216,3 +216,7 @@ body {
 .current {
   font-size: 3.2rem;
 }
+
+.player-winner {
+  background-image: url("img/winner.png");
+}
