@@ -34,12 +34,14 @@ const btnHoldEl = document.querySelector(".btn--hold");
 const btnNewEl = document.querySelector(".btn--new");
 // const activePlayer = document.querySelector(".player--active");
 let currentScore = 0;
+let playing = true;
 
 // Initial Conditions
 let score = [0, 0];
 let activePlayer = 0;
 // Function to reset the game
 const init = function () {
+  playing = true;
   currentScore = 0;
   score = [0, 0];
   scores0El.textContent = 0;
@@ -48,6 +50,8 @@ const init = function () {
   activePlayer = 0;
   player0El.classList.add("player-active");
   player1El.classList.remove("player-active");
+  player0El.classList.remove("player-winner");
+  player1El.classList.remove("player-winner");
 };
 
 init();
@@ -64,47 +68,52 @@ const switchPlayer = function () {
 
 // -------------- EVENT LISTNER - ROLL DICE ----------------
 btnRollEl.addEventListener("click", function () {
-  // Generate a random number. Display the dice  per the number
-  let diceRoll = Math.trunc(Math.random() * 6) + 1;
-  diceEl.classList.remove("hidden");
-  diceEl.src = `img/dice-${diceRoll}.png`;
+  if (playing) {
+    // Generate a random number. Display the dice  per the number
+    let diceRoll = Math.trunc(Math.random() * 6) + 1;
+    diceEl.classList.remove("hidden");
+    diceEl.src = `img/dice-${diceRoll}.png`;
 
-  // Store it in a variable called 'currentScore'
-  currentScore += diceRoll;
+    // Store it in a variable called 'currentScore'
+    currentScore += diceRoll;
 
-  // Display that number as the current score of active player
-  // current0El.textContent = currentScore;
-  document.querySelector(`.current--${activePlayer}`).textContent =
-    currentScore;
+    // Display that number as the current score of active player
+    // current0El.textContent = currentScore;
+    document.querySelector(`.current--${activePlayer}`).textContent =
+      currentScore;
 
-  // If dice rolls 1
-  if (diceRoll === 1) {
-    // The current score of the active player will be 0
-    currentScore = 0;
-    document.querySelector(`.current--${activePlayer}`).textContent = 0;
+    // If dice rolls 1
+    if (diceRoll === 1) {
+      // The current score of the active player will be 0
+      currentScore = 0;
+      document.querySelector(`.current--${activePlayer}`).textContent = 0;
 
-    // The active player will change
-    switchPlayer();
+      // The active player will change
+      switchPlayer();
+    }
   }
 });
 
 // -------------- EVENT LISTNER - HOLD SCORE ----------------
 btnHoldEl.addEventListener("click", function () {
-  // Store the current score of Active Player in Scores
-  score[activePlayer] += currentScore;
-  document.querySelector(`.scores--${activePlayer}`).textContent =
-    score[activePlayer];
+  if (playing) {
+    // Store the current score of Active Player in Scores
+    score[activePlayer] += currentScore;
+    document.querySelector(`.scores--${activePlayer}`).textContent =
+      score[activePlayer];
 
-  // If the score is >= 100 then the active player wins
-  if (score[activePlayer] >= 100) {
-    document.querySelector(".player-active").classList.add("player-winner");
-  } else {
-    // Else the Plaerys will switch
-    currentScore = 0;
-    document.querySelector(`.current--${activePlayer}`).textContent = 0;
+    // If the score is >= 100 then the active player wins
+    if (score[activePlayer] >= 100) {
+      playing = false;
+      document.querySelector(".player-active").classList.add("player-winner");
+    } else {
+      // Else the Plaerys will switch
+      currentScore = 0;
+      document.querySelector(`.current--${activePlayer}`).textContent = 0;
 
-    // The active player will change
-    switchPlayer();
+      // The active player will change
+      switchPlayer();
+    }
   }
 });
 
