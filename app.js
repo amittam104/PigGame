@@ -8,6 +8,7 @@
 // REfactoring CODE -
 // 1. Create a Player change function
 // 2. Set initial and new game conditions in a function
+// The roll dice and Hold button should not work after any Player wins
 
 // FEATURE 1
 // Use user set max value to play the game
@@ -36,10 +37,30 @@ let currentScore = 0;
 
 // Initial Conditions
 let score = [0, 0];
-scores0El.textContent = 0;
-scores1El.textContent = 0;
-diceEl.classList.add("hidden");
 let activePlayer = 0;
+// Function to reset the game
+const init = function () {
+  currentScore = 0;
+  score = [0, 0];
+  scores0El.textContent = 0;
+  scores1El.textContent = 0;
+  diceEl.classList.add("hidden");
+  activePlayer = 0;
+  player0El.classList.add("player-active");
+  player1El.classList.remove("player-active");
+};
+
+init();
+
+// Funtion - To switch Player
+const switchPlayer = function () {
+  activePlayer = activePlayer === 0 ? 1 : 0;
+
+  document.querySelector(`.current--${activePlayer}`).textContent =
+    currentScore;
+  player0El.classList.toggle("player-active");
+  player1El.classList.toggle("player-active");
+};
 
 // -------------- EVENT LISTNER - ROLL DICE ----------------
 btnRollEl.addEventListener("click", function () {
@@ -63,12 +84,7 @@ btnRollEl.addEventListener("click", function () {
     document.querySelector(`.current--${activePlayer}`).textContent = 0;
 
     // The active player will change
-    activePlayer = activePlayer === 0 ? 1 : 0;
-
-    document.querySelector(`.current--${activePlayer}`).textContent =
-      currentScore;
-    player0El.classList.toggle("player-active");
-    player1El.classList.toggle("player-active");
+    switchPlayer();
   }
 });
 
@@ -80,7 +96,7 @@ btnHoldEl.addEventListener("click", function () {
     score[activePlayer];
 
   // If the score is >= 100 then the active player wins
-  if (score[activePlayer] >= 30) {
+  if (score[activePlayer] >= 100) {
     document.querySelector(".player-active").classList.add("player-winner");
   } else {
     // Else the Plaerys will switch
@@ -88,23 +104,9 @@ btnHoldEl.addEventListener("click", function () {
     document.querySelector(`.current--${activePlayer}`).textContent = 0;
 
     // The active player will change
-    activePlayer = activePlayer === 0 ? 1 : 0;
-
-    document.querySelector(`.current--${activePlayer}`).textContent =
-      currentScore;
-    player0El.classList.toggle("player-active");
-    player1El.classList.toggle("player-active");
+    switchPlayer();
   }
 });
 
 // -------------- EVENT LISTNER - NEW GAME ----------------
-btnNewEl.addEventListener("click", function () {
-  currentScore = 0;
-  score = [0, 0];
-  scores0El.textContent = 0;
-  scores1El.textContent = 0;
-  diceEl.classList.add("hidden");
-  activePlayer = 0;
-  player0El.classList.add("player-active");
-  player1El.classList.remove("player-active");
-});
+btnNewEl.addEventListener("click", init);
