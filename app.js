@@ -32,6 +32,8 @@ const scores1El = document.querySelector(".scores--1");
 const btnRollEl = document.querySelector(".btn--roll");
 const btnHoldEl = document.querySelector(".btn--hold");
 const btnNewEl = document.querySelector(".btn--new");
+const btnSetEl = document.querySelector(".btn--set");
+const maxValue = document.querySelector(".set-number");
 // const activePlayer = document.querySelector(".player--active");
 let currentScore = 0;
 let playing = true;
@@ -39,9 +41,11 @@ let playing = true;
 // Initial Conditions
 let score = [0, 0];
 let activePlayer = 0;
+let userInput = 0;
 // Function to reset the game
 const init = function () {
   playing = true;
+  maxValue.value = "";
   currentScore = 0;
   score = [0, 0];
   scores0El.textContent = 0;
@@ -65,6 +69,13 @@ const switchPlayer = function () {
   player0El.classList.toggle("player-active");
   player1El.classList.toggle("player-active");
 };
+
+// -------------- FEATURE 1 -- User Input - Set the max winning value ----------------
+
+btnSetEl.addEventListener("click", function () {
+  userInput = maxValue.value;
+  // console.log(userInput);
+});
 
 // -------------- EVENT LISTNER - ROLL DICE ----------------
 btnRollEl.addEventListener("click", function () {
@@ -103,7 +114,7 @@ btnHoldEl.addEventListener("click", function () {
       score[activePlayer];
 
     // If the score is >= 100 then the active player wins
-    if (score[activePlayer] >= 100) {
+    if (score[activePlayer] >= userInput) {
       playing = false;
       document.querySelector(".player-active").classList.add("player-winner");
     } else {
