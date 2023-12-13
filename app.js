@@ -33,6 +33,8 @@ const btnRollEl = document.querySelector(".btn--roll");
 const btnHoldEl = document.querySelector(".btn--hold");
 const btnNewEl = document.querySelector(".btn--new");
 const btnSetEl = document.querySelector(".btn--set");
+const btnrulesEl = document.querySelector(".btn--rules");
+const btncloseEl = document.querySelector(".btn--close");
 const maxValue = document.querySelector(".set-number");
 // const activePlayer = document.querySelector(".player--active");
 let currentScore = 0;
@@ -129,4 +131,16 @@ btnHoldEl.addEventListener("click", function () {
 });
 
 // -------------- EVENT LISTNER - NEW GAME ----------------
+
 btnNewEl.addEventListener("click", init);
+
+// ----------- FEATURE 2 -- Game Rules - A modal window to show the game rules -------------
+btnrulesEl.addEventListener("click", function () {
+  document.querySelector(".modal-window").classList.remove("hidden");
+  document.querySelector(".modal-overlay").classList.remove("hidden");
+});
+
+btncloseEl.addEventListener("click", function () {
+  document.querySelector(".modal-window").classList.add("hidden");
+  document.querySelector(".modal-overlay").classList.add("hidden");
+});

@@ -269,7 +269,7 @@ input::-webkit-input-placeholder {
   font-weight: 600;
 }
 
-.btn-close {
+.btn--close {
   font-size: 1.8rem;
   font-weight: 600;
   background-color: #8a426e;
