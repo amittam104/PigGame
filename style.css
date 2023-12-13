@@ -36,6 +36,7 @@ body {
 .container {
   max-width: 100rem;
   margin: 8rem auto;
+  /* padding: 8rem 0; */
 }
 
 .header {
@@ -237,4 +238,76 @@ input::-webkit-input-placeholder {
 .player-winner {
   background-image: url("img/winner.png");
   background-size: contain;
+}
+
+/* FEATURE 2 - MODAL WINDOW --- RULES*/
+.modal-window {
+  max-width: 50%;
+  /* margin: 0 auto; */
+  background-color: #fff;
+  padding: 2.8rem 4rem;
+  border-radius: 1rem;
+  box-shadow: 2px 3px 12px rgba(0, 0, 0, 0.4);
+
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+.rules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.rules-name {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.btn-close {
+  font-size: 1.8rem;
+  font-weight: 600;
+  background-color: #8a426e;
+  box-shadow: 1px 2px 6px rgba(69, 33, 55, 0.6);
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+}
+
+.rules-list {
+  font-size: 1.6rem;
+  /* list-style: none; */
+  line-height: 1.5;
+  padding-left: 2rem;
+}
+
+.rule {
+  margin-bottom: 1.8rem;
+}
+
+.rule:last-child {
+  margin-bottom: 1.2rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998; /* Ensure it's on top of other elements */
+}
+
+.modal-overlay.hidden,
+.modal-window.hidden {
+  display: none;
 }

@@ -47,6 +47,37 @@
           </div>
         </section>
       </div>
+      <div class="modal-window hidden">
+        <div class="rules-header">
+          <h2 class="rules-name">Game Rules</h2>
+          <button class="btn btn-close">X</button>
+        </div>
+        <ul class="rules-list">
+          <li class="rule">The game can be played with 2 players.</li>
+          <li class="rule">
+            In each turn, a player rolls a dice as many times as he/she wants.
+            Each result gets added to the CURRENT score.
+          </li>
+          <li class="rule">
+            But, if the player rolls a 1, the CURRENT score becomes 0. After
+            that, it's the next player's turn.
+          </li>
+          <li class="rule">
+            The player can choose to 'Hold', which means that the CURRENT score
+            gets added to the TOTAL score. After that, it's the next player's
+            turn.
+          </li>
+          <li class="rule">
+            The first player to reach MAXIMUM points on GLOBAL score wins the
+            game.
+          </li>
+          <li class="rule">
+            FEATURE 1 -> The players can set the maximum number till the game
+            can be played.
+          </li>
+        </ul>
+      </div>
+      <div class="modal-overlay hidden"></div>
     </main>
     <script src="app.js"></script>
   </body>
