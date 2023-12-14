@@ -36,6 +36,8 @@ const btnSetEl = document.querySelector(".btn--set");
 const btnrulesEl = document.querySelector(".btn--rules");
 const btncloseEl = document.querySelector(".btn--close");
 const maxValue = document.querySelector(".set-number");
+const name0El = document.querySelector(".player-name--0");
+const name1El = document.querySelector(".player-name--1");
 // const activePlayer = document.querySelector(".player--active");
 let currentScore = 0;
 let playing = true;
@@ -48,6 +50,7 @@ let userInput = 0;
 const init = function () {
   playing = true;
   maxValue.value = "";
+  playerNames();
   currentScore = 0;
   score = [0, 0];
   scores0El.textContent = 0;
@@ -71,6 +74,16 @@ const switchPlayer = function () {
   player0El.classList.toggle("player-active");
   player1El.classList.toggle("player-active");
 };
+
+// ---------- FEATURE 3 -- Player Name - Both Players can add thier names in the game ------------
+function playerNames() {
+  let player1Name = prompt("Player 1 - Enter your Name");
+  let player2Name = prompt("Player 2 - Enter your Name");
+
+  return (
+    (name0El.textContent = player1Name), (name1El.textContent = player2Name)
+  );
+}
 
 // -------------- FEATURE 1 -- User Input - Set the max winning value ----------------
 
