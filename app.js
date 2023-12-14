@@ -80,9 +80,13 @@ function playerNames() {
   let player1Name = prompt("Player 1 - Enter your Name");
   let player2Name = prompt("Player 2 - Enter your Name");
 
-  return (
-    (name0El.textContent = player1Name), (name1El.textContent = player2Name)
-  );
+  if (player1Name === "" || player2Name === "") {
+    player1Name = "Player 1";
+    player2Name = "Player 2";
+    return (
+      (name0El.textContent = player1Name), (name1El.textContent = player2Name)
+    );
+  }
 }
 
 // -------------- FEATURE 1 -- User Input - Set the max winning value ----------------
