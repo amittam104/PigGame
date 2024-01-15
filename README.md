@@ -8,7 +8,8 @@
 
 App has a very simple user interface.
 
-![Screenshot](https://raw.githubusercontent.com/ajaykumar1196/Pig-Game/master/UI/start.png)
+![image](https://github.com/amittam104/PigGame/assets/142736996/15297955-9f12-4801-99a6-4a70e7ae627c)
+
 
 ### Rules
 
