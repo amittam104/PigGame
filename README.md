@@ -21,9 +21,9 @@ Don't know the rules? Don't worry. Just click on the Rules button on the top rig
 
 ![image](https://github.com/amittam104/PigGame/assets/142736996/2cb64a35-5f65-4763-a092-ea6300c55804)
 
-### Set the Number
+### Set the Winning points
 
-Now you can set the maximum number of your choice. The player who reaches equal to or more than that number first wins the game.
+Now you can set the maximum points of your choice. The player who reaches equal to or more than that points first wins the game.
 
 ![image](https://github.com/amittam104/PigGame/assets/142736996/322c2691-340e-40ba-9368-8e6fdae82d5a)
 
