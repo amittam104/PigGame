@@ -3,10 +3,10 @@
 **Pig Game** is a Dice game where two players can play against each other. The player who score maximum points wins the game.
 
 ## Introduction
-1. Player can set thier names instead of default names.
-2. Players can check the rules of the game.
-3. Players can set the maximum number on which the game can be played.
-4. Player can also reset the game and play again.
+1. Set the names instead of default names.
+2. Check the rules of the game.
+3. Set the maximum points on which the game can be played.
+4. Reset the game and play again.
 
 ### Game Starts Here
 
